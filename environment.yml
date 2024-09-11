@@ -1,0 +1,17 @@
+# Define the conda python environment
+name: py_django
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - fastapi
+  - python-dotenv
+  - pyyaml
+  - uvicorn
+  - httpie
+  - pymongo
+  - django
+  - pip
+  # - pip:
+  #   - test
