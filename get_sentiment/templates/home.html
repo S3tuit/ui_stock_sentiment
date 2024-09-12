@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Sentiment App</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'get_sentiment/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Stock Sentiment Analyzer</h1>
+        
+        <!-- Form to input stock ticker -->
+        <form method="POST">
+            {% csrf_token %}
+            <textarea name="user_input" rows="4" placeholder="Enter stock ticker..."></textarea><br>
+            <button type="submit">Analyze Sentiment</button>
+        </form>
+
+        <!-- Display submitted stock ticker -->
+        <div class="output">
+            {% if user_input %}
+                <h3>You entered:</h3>
+                <p>{{ user_input }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

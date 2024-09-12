@@ -13,5 +13,5 @@ dependencies:
   - pymongo
   - django
   - pip
-  # - pip:
-  #   - test
+  - pip:
+    - openai
