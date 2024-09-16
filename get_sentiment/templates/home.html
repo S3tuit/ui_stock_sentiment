@@ -18,11 +18,26 @@
             <button type="submit">Analyze Sentiment</button>
         </form>
 
-        <!-- Display submitted stock ticker -->
+        <!-- Display stock sentiment result -->
         <div class="output">
             {% if user_input %}
-                <h3>Sentiment:</h3>
-                <div class="sentiment-result">{{ user_input }}</div>
+                <h3>Sentiment Analysis for {{ user_input.ticket }}:</h3>
+                
+                <!-- Display sentiment score -->
+                <div class="sentiment-score">
+                    <h4>Score:</h4>
+                    <p>{{ user_input.score }}</p>
+                </div>
+                
+                <!-- Display sentiment reasoning -->
+                <div class="sentiment-reasoning">
+                    <h4>Reasoning:</h4>
+                    <p>{{ user_input.reasoning }}</p>
+                </div>
+            {% endif %}
+
+            {% if user_input_error %}
+                <h3>{{ user_input_error }}</h3>
             {% endif %}
         </div>
     </div>
